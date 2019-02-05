@@ -7,7 +7,7 @@ class User
 {
     const ADMIN_ROLE = 1;
     const AUDITOR_ROLE = 2;
-    const OPERATOR_ROLE = 2;
+    const OPERATOR_ROLE = 3;
 
     static public function createAdmin($name)
     {
@@ -32,13 +32,13 @@ class User
 
         switch ($userType) {
             case self::ADMIN_ROLE:
-                echo 'Создаем администратора'.PHP_EOL;
+                echo "Создаем администратора ($name)" . PHP_EOL;
                 break;
             case self::AUDITOR_ROLE:
-                echo 'Создаем аудитора'.PHP_EOL;
+                echo "Создаем аудитора ($name)".PHP_EOL;
                 break;
             case self::OPERATOR_ROLE:
-                echo 'Создаем оператора'.PHP_EOL;
+                echo "Создаем оператора ($name)".PHP_EOL;
                 break;
         }
     }
@@ -46,3 +46,5 @@ class User
 
 
 $admin = User::createAdmin('Ivanov-AS');
+$auditor = User::createAuditor('Petrov-AF');
+$operator = User::createOperator('Sidorov-IG');

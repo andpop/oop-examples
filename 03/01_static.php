@@ -17,3 +17,6 @@ class StaticExample
 
 StaticExample::say();
 
+StaticExample::$name = "Петя";
+StaticExample::say();
+

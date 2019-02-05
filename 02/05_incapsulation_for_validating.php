@@ -1,5 +1,5 @@
 <?php
-namespace Popov\Lection2\Ex5;
+namespace Popov\Lection2\Ex8;
 
 class Car
 {
