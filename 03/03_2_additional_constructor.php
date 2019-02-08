@@ -1,6 +1,6 @@
 <?php
 
-namespace Popov\Lection3\Ex3;
+namespace Popov\Lection3\Ex3_2;
 
 
 class User
