@@ -31,6 +31,6 @@ class User
 }
 
 
-$admin = new User('Ivanov-AS', 1);
+$admin = new User('Ivanov-AS', User::ADMIN_ROLE);
 $auditor = new User('Petrov-AF', 2);
 $operator = new User('Sidorov-IG', 3);

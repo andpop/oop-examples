@@ -5,13 +5,14 @@ class Student
 {
     var $name;
     var $lastName;
-    function __construct($name, $lastName)
+
+    public function __construct($name, $lastName)
     {
         $this->name = $name;
         $this->lastName = $lastName;
     }
 
-    function getFullName()
+    public function getFullName()
     {
         echo "Полное имя: ".$this->name." ".$this->lastName.PHP_EOL;
     }

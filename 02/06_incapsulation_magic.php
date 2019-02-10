@@ -26,7 +26,7 @@ class Student
         };
     }
 
-    function getFullName()
+    public function getFullName()
     {
         echo "Полное имя: ".$this->name." ".$this->lastName.PHP_EOL;
     }
@@ -34,6 +34,9 @@ class Student
 
 
 $student1 = new Student("Сергей", "Иванов");
+
+$student1->age = 23;
+echo $student1->age . PHP_EOL;
 
 echo $student1->name.PHP_EOL;
 echo $student1->lastName.PHP_EOL;

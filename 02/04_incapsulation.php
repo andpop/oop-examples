@@ -6,33 +6,33 @@ class Student
     private $name;
     private $lastName;
 
-    function __construct($name, $lastName)
+    public function __construct($name, $lastName)
     {
         $this->name = $name;
         $this->lastName = $lastName;
     }
 
-    function getName()
+    public function getName()
     {
         return $this->name;
     }
 
-    function setName($name)
+    public function setName($name)
     {
         $this->name = $name;
     }
 
-    function getLastName()
+    public function getLastName()
     {
         return $this->lastName;
     }
 
-    function setLastName($lastName)
+    public function setLastName($lastName)
     {
         $this->lastName = $lastName;
     }
 
-    function getFullName()
+    public function getFullName()
     {
         echo "Полное имя: ".$this->name." ".$this->lastName.PHP_EOL;
     }
@@ -48,4 +48,7 @@ $student1->getFullName();
 
 
 //echo $student1->name;
+$student1->age = 24;
+echo $student1->age.PHP_EOL;
+
 // PHP Fatal error:  Uncaught Error: Cannot access private property

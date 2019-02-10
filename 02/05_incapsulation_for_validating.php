@@ -31,7 +31,7 @@ $car1 = new Car;
 
 $car1->displayColor();
 try {
-    $car1->paint("синий");
+    $car1->paint("красный");
 } catch (\Exception $e) {
     echo $e->getMessage().PHP_EOL;
 }

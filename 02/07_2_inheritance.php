@@ -4,7 +4,7 @@ namespace Popov\Lection2\Ex7;
 class Car
 {
     private $manufacturer;
-    private $model;
+    protected $model;
     private $color;
     private $year;
 
@@ -35,6 +35,7 @@ class PassengerCar extends Car
     {
         parent::__construct($manufacturer, $model, $color, $year);
         $this->numberPassenger = $numberPassenger;
+        echo $this->model.PHP_EOL;
     }
 
     public function displayNumberPassenger()

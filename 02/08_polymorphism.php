@@ -3,7 +3,7 @@ namespace Popov\Lection2\Ex8;
 
 abstract class Animal
 {
-    abstract public function speak();
+//    abstract public function speak();
 }
 
 class Cat extends Animal
@@ -30,6 +30,14 @@ class Duck extends Animal
     }
 }
 
+class Frog extends Animal
+{
+    public function speak()
+    {
+        echo "Ква!" .PHP_EOL;
+    }
+}
+
 function speak(Animal $animal)
 {
     $animal->speak();
@@ -38,7 +46,9 @@ function speak(Animal $animal)
 $cat = new Cat;
 $dog = new Dog;
 $duck = new Duck;
+$frog = new Frog();
 
 speak($cat);
 speak($dog);
 speak($duck);
+speak($frog);
