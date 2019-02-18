@@ -30,7 +30,7 @@ class SimplePlug extends Plug implements ElectricalPlug
     }
 }
 
-class GroundedPlug implements ElectricalPlug
+class GroundedPlug extends SimplePlug implements ElectricalPlug
 {
     public function plug()
     {

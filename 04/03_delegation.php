@@ -44,6 +44,7 @@ class Car
 }
 
 $engine = new Engine(160);
+//$engine = 160;
 $myCar = new Car("Saturn VUE", $engine);
 
 $myCar->startEngine();

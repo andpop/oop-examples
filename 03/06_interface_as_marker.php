@@ -36,7 +36,7 @@ class Potato extends Food implements VeganEat
     }
 }
 
-class Onion extends Food
+class Onion extends Food implements VeganEat
 {
     public function __construct()
     {
