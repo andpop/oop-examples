@@ -3,9 +3,9 @@
 class MyIterator implements Iterator
 {
     private $innerArray = [];
-//    private $position = 0;
+    private $position = 0;
 
-    public function __construct($array)
+    public function __construct(array $array)
     {
         if (is_array($array)) {
             $this->innerArray = $array;

@@ -12,7 +12,7 @@ class Engine implements EngineInterface
 {
     private $power;
 
-    public function __construct($power)
+    public function __construct(int $power)
     {
         $this->power = $power;
     }
@@ -33,7 +33,7 @@ class AnotherEngine implements EngineInterface
 {
     private $power;
 
-    public function __construct($power)
+    public function __construct(int $power)
     {
         $this->power = $power;
     }
@@ -56,7 +56,7 @@ class Car
     private $model;
     private $engine;
 
-    public function __construct($model, EngineInterface $engine)
+    public function __construct(string $model, EngineInterface $engine)
     {
         $this->model = $model;
         $this->engine = $engine;

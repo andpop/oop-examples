@@ -11,5 +11,4 @@ function numbers()
 }
 
 foreach (numbers() as $value) {
-
 };
