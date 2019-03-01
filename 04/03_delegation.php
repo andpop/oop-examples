@@ -1,10 +1,12 @@
 <?php
 
+namespace Popov\Lection4\Ex3;
+
 class Engine
 {
     private $power;
 
-    public function __construct($power)
+    public function __construct(int $power)
     {
         $this->power = $power;
     }
@@ -26,7 +28,7 @@ class Car
     private $model;
     private $engine;
 
-    public function __construct($model, Engine $engine)
+    public function __construct(string $model, Engine $engine)
     {
         $this->model = $model;
         $this->engine = $engine;
@@ -44,7 +46,6 @@ class Car
 }
 
 $engine = new Engine(160);
-//$engine = 160;
 $myCar = new Car("Saturn VUE", $engine);
 
 $myCar->startEngine();

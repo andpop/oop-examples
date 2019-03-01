@@ -1,5 +1,7 @@
 <?php
 
+namespace Popov\Lection4\Ex4;
+
 interface EngineInterface
 {
     public function on();
