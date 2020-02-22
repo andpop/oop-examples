@@ -86,24 +86,30 @@ class VanillaCoffee implements Coffee
 
 
 // Готовим кофе
-$someCoffee = new SimpleCoffee();
-echo $someCoffee->getCost() . PHP_EOL; // 10
-echo $someCoffee->getDescription() . PHP_EOL; // Simple Coffee
-
-$someCoffee = new MilkCoffee($someCoffee);
-echo $someCoffee->getCost() . PHP_EOL; // 12
-echo $someCoffee->getDescription() . PHP_EOL; // Simple Coffee, milk
-
-$someCoffee = new WhipCoffee($someCoffee);
-echo $someCoffee->getCost() . PHP_EOL; // 17
-echo $someCoffee->getDescription() . PHP_EOL; // Simple Coffee, milk, whip
-
-$someCoffee = new VanillaCoffee($someCoffee);
-echo $someCoffee->getCost() . PHP_EOL; // 20
-echo $someCoffee->getDescription() . PHP_EOL; // Simple Coffee, milk, whip, vanilla
-
+$coffee = new SimpleCoffee();
+echo $coffee->getDescription() . PHP_EOL; // Simple Coffee
+echo $coffee->getCost() . PHP_EOL; // 10
 echo "----------------------------------------------\n";
 
-$someCoffee = new VanillaCoffee(new WhipCoffee(new MilkCoffee(new SimpleCoffee())));
-echo $someCoffee->getCost() . PHP_EOL;
-echo $someCoffee->getDescription() . PHP_EOL;
+// Simple Coffee + milk
+$coffee = new MilkCoffee($coffee);
+echo $coffee->getDescription() . PHP_EOL;
+echo $coffee->getCost() . PHP_EOL; // 12
+echo "----------------------------------------------\n";
+
+// Simple Coffee + milk + whip
+$coffee = new WhipCoffee($coffee);
+echo $coffee->getDescription() . PHP_EOL;
+echo $coffee->getCost() . PHP_EOL; // 17
+echo "----------------------------------------------\n";
+
+// Simple Coffee + milk + whip + vanilla
+$coffee = new VanillaCoffee($coffee);
+echo $coffee->getDescription() . PHP_EOL;
+echo $coffee->getCost() . PHP_EOL; // 20
+
+echo "====================================================\n";
+
+$coffee = new VanillaCoffee(new WhipCoffee(new MilkCoffee(new SimpleCoffee())));
+echo $coffee->getDescription() . PHP_EOL;
+echo $coffee->getCost() . PHP_EOL;

@@ -12,7 +12,7 @@ class Student
         $this->lastName = $lastName;
     }
 
-    public function getName()
+    private function getName()
     {
         return $this->name;
     }
@@ -42,13 +42,15 @@ class Student
 $student1 = new Student("Сергей", "Иванов");
 
 echo $student1->getName().PHP_EOL;
+//echo $student1->name;
+
 $student1->getFullName();
 $student1->setName("Николай");
 $student1->getFullName();
 
-
-//echo $student1->name;
-$student1->age = 24;
-echo $student1->age.PHP_EOL;
+//
+////echo $student1->name;
+//$student1->age = 24;
+//echo $student1->age.PHP_EOL;
 
 // PHP Fatal error:  Uncaught Error: Cannot access private property

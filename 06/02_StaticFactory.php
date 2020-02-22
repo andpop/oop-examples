@@ -30,17 +30,59 @@ class WoodenDoor implements Door
     }
 }
 
-//Фабрика дверей
-class DoorFactory
+
+class IronDoor implements Door
 {
-    public static function makeDoor($width, $height): Door
+    protected $width;
+    protected $height;
+
+    public function __construct(float $width, float $height)
     {
-        return new WoodenDoor($width, $height);
+        $this->width = $width;
+        $this->height = $height;
+        echo 'Новая железная дверь'.PHP_EOL;
+    }
+
+    public function getWidth(): float
+    {
+        return $this->width;
+    }
+
+    public function getHeight(): float
+    {
+        return $this->height;
     }
 }
 
+//Фабрика дверей
+class DoorFactory
+{
+    private static $door;
+
+    public static function makeDoor($doorType, $width, $height): Door
+    {
+        switch ($doorType) {
+            case 'wooden':
+                self::$door = new WoodenDoor($width, $height);
+                break;
+            case 'iron':
+                self::$door = new IronDoor($width, $height);
+                break;
+        }
+
+        return self::$door;
+    }
+}
+
+/////////////////////////////////////////////////////////////////////////////
+//Основная программа
+/////////////////////////////////////////////////////////////////////////////
+
+$doorType = 'iron';
+
 //Использование фабрики
-$door = DoorFactory::makeDoor(100, 200);
+$door = DoorFactory::makeDoor($doorType, 100, 200);
+
 
 echo 'Width: ' . $door->getWidth() . PHP_EOL;
 echo 'Height: ' . $door->getHeight() . PHP_EOL;

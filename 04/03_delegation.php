@@ -23,6 +23,28 @@ class Engine
     }
 }
 
+class Engine2
+{
+    private $power;
+
+    public function __construct(int $power)
+    {
+        $this->power = $power;
+    }
+
+    public function on()
+    {
+        // Реализация функционала
+        echo "Двигатель заведен".PHP_EOL;
+    }
+    public function off()
+    {
+        // Реализация функционала
+        echo "Двигатель выключен".PHP_EOL;
+    }
+}
+
+
 class Car
 {
     private $model;
@@ -46,7 +68,8 @@ class Car
 }
 
 $engine = new Engine(160);
-$myCar = new Car("Saturn VUE", $engine);
+$engine2 = new Engine2(160);
+$myCar = new Car("Saturn VUE", $engine2);
 
 $myCar->startEngine();
 $myCar->stopEngine();

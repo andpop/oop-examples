@@ -13,6 +13,7 @@ class Student
 }
 
 $student1 = new Student;
+
 $student1->name = "Сергей";
 $student1->lastName = "Иванов";
 $student1->getFullName();

@@ -69,3 +69,5 @@ $burger = (new BurgerBuilder(14))
     ->addLettuce()
     ->addTomato()
     ->build();
+
+var_dump($burger);

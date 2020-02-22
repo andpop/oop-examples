@@ -9,15 +9,6 @@ final class President
         // Прячем конструктор
     }
 
-    public static function getInstance(): President
-    {
-        if (!self::$instance) {
-            self::$instance = new self();
-        }
-
-        return self::$instance;
-    }
-
     private function __clone()
     {
         // Отключаем клонирование
@@ -27,6 +18,16 @@ final class President
     {
         // Отключаем десериализацию
     }
+
+    public static function getInstance(): President
+    {
+        if (!self::$instance) {
+            self::$instance = new self();
+        }
+
+        return self::$instance;
+    }
+
 }
 
 $president1 = President::getInstance();

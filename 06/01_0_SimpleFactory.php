@@ -17,6 +17,7 @@ class WoodenDoor implements Door
     {
         $this->width = $width;
         $this->height = $height;
+        echo 'Новая деревянная дверь'.PHP_EOL;
     }
 
     public function getWidth(): float
@@ -53,35 +54,19 @@ class IronDoor implements Door
     }
 }
 
-//Фабрика дверей
-class DoorFactory
-{
-    private $door;
-    public function makeDoor($doorType, $width, $height): Door
-    {
-        switch ($doorType) {
-            case 'wooden':
-                $this->door = new WoodenDoor($width, $height);
-                break;
-            case 'iron':
-                $this->door = new IronDoor($width, $height);
-                break;
-        }
-
-        return $this->door;
-    }
-}
-
-
 /////////////////////////////////////////////////////////////////////////////
 //Основная программа
 /////////////////////////////////////////////////////////////////////////////
-
 $doorType = 'iron';
 
-//Использование фабрики
-$factory = new DoorFactory();
-$door = $factory->makeDoor($doorType, 100, 200);
+switch ($doorType) {
+  case 'wooden':
+    $door = new WoodenDoor(20, 30);
+    break;
+  case 'iron':
+    $door = new IronDoor(20, 30);
+    break;
+}
 
-echo 'Width: ' . $door->getWidth() . PHP_EOL;
-echo 'Height: ' . $door->getHeight() . PHP_EOL;
+// var_dump($woodenDoor);
+// var_dump($ironDoor);
